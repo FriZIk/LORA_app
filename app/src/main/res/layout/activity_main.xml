@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#454349"
+    tools:context=".MainActivity">
+
+    3
+
+    <Button
+        android:id="@+id/EnterData"
+        android:layout_width="175dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="93dp"
+        android:backgroundTint="#231C1C"
+        android:onClick="Click"
+        android:shadowColor="#E34A4A"
+        android:text="Отправить"
+        android:textColor="#C1AEAE"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Data" />
+
+    <ImageView
+        android:id="@+id/Emblem"
+        android:layout_width="148dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="95dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/aerial_signal" />
+
+    <TextView
+        android:id="@+id/DataSend"
+        android:layout_width="191dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="151dp"
+        android:text="Данные переданы"
+        android:textColor="#780404"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterData" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteY="658dp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#231C1C"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@android:style/Theme.Holo.NoActionBar.Overscan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Data"
+        android:layout_width="228dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="99dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Emblem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
