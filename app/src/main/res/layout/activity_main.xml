@@ -46,7 +46,7 @@
         android:layout_marginStart="151dp"
         android:layout_marginTop="63dp"
         android:layout_marginEnd="151dp"
-        android:text="Данные переданы"
+        android:text="Данные переданы:"
         android:textColor="#780404"
         android:textSize="16sp"
         android:visibility="invisible"
