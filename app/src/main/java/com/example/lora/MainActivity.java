@@ -1,16 +1,12 @@
 package com.example.lora;
 import android.webkit.WebResourceRequest;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
-
 import java.io.IOException;
 import java.security.ProtectionDomain;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -64,6 +60,13 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+    }
+
+    public void Get(View view)
+    {
+        String getData = "";
+        OkHttpClient client = new OkHttpClient();
+        String url = "192.168.0.*"; // Нужно узнать нужный урл в сети
 
     }
 }
