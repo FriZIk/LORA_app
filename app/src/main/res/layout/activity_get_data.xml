@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#454349"
+    tools:context=".GetData">
+
+    <TextView
+        android:id="@+id/InfoMesageOn"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="96dp"
+        android:background="#231C1C"
+        android:backgroundTint="#231C1C"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Сервер слушает 80 порт!"
+        android:textColor="#669811"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SwitchListen" />
+
+    <TextView
+        android:id="@+id/InfoMesageOff"
+        android:layout_width="219dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="96dp"
+        android:background="#231C1C"
+        android:backgroundTint="#231C1C"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Сервер не слушает 80 порт!"
+        android:textColor="#EA2D1F"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SwitchListen" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteY="658dp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#231C1C"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@android:style/Theme.Holo.NoActionBar.Overscan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/InfoBox"
+        android:layout_width="300dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="56dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#231C1C"
+        android:gravity="center"
+        android:text="В этой вкладке можно отправить данные "
+        android:textColor="#C1AEAE"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main" />
+
+    <Switch
+        android:id="@+id/SwitchListen"
+        android:layout_width="316dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="59dp"
+        android:backgroundTint="#231C1C"
+        android:shadowColor="#FFFFFF"
+        android:text="Включить прослушивание порта 80"
+        android:textColor="#C1AEAE"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InfoBox" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="258dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="88dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InfoMesageOn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

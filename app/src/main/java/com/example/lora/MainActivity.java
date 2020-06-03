@@ -1,72 +1,49 @@
 package com.example.lora;
-import android.webkit.WebResourceRequest;
+import android.content.Intent;
+import android.os.AsyncTask;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-import org.w3c.dom.Text;
-import java.io.IOException;
-import java.security.ProtectionDomain;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity
 {
-    public TextView SendData;
+    public TextView IP_Address;
     public TextView Data;
 
+    public Button SendButton;
+    public Button GetButton;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SendData = findViewById(R.id.DataSend);
-        Data = findViewById(R.id.Data);
-    }
 
-    public void Click(View view)
-    {
-        SendData.setVisibility(View.VISIBLE);
-        String EnteredData ="";
-        EnteredData = Data.getText().toString();
-        OkHttpClient client = new OkHttpClient();
-        String url = "192.168.0.*"; // Нужно узнать нужный урл в сети
-        Request request = new Request.Builder().url(url).build();
-        client.newCall(request).enqueue(new Callback()
+        View.OnClickListener GetDataHandler = new View.OnClickListener()
         {
-            @Override
-            public void onFailure(Call call, IOException e)
+            public void onClick(View v)
             {
-                e.printStackTrace(); // Вывод сообщения об ошибке
+                Intent intent = new Intent(MainActivity.this, GetData.class);
+                //Intent intent1 = new Intent(MainActivity.this, Test.class);
+                startActivity(intent);
             }
+        };
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException
-            {
-                if (response.isSuccessful())
-                {
-                    String myResponse = response.body().string();
-                    MainActivity.this.runOnUiThread(new Runnable()
-                    {
-                        @Override
-                        public void run()
-                        {
-                            //mTextViewResult.setText(myResponse);
-                        }
-                    });
-                }
-            }
-        });
-    }
+        View.OnClickListener SendDataHandler = new View.OnClickListener()
+        {
+          public void onClick(View v)
+          {
+              Intent intent = new Intent(MainActivity.this, SendData.class);
+              startActivity(intent);
+          }
+        };
 
-    public void Get(View view)
-    {
-        String getData = "";
-        OkHttpClient client = new OkHttpClient();
-        String url = "192.168.0.*"; // Нужно узнать нужный урл в сети
+        Button SendData = (Button)findViewById(R.id.SendDataButton);
+        SendData.setOnClickListener(SendDataHandler);
 
+        Button GetData = (Button)findViewById(R.id.GetDataButton);
+        GetData.setOnClickListener(GetDataHandler);
     }
 }
